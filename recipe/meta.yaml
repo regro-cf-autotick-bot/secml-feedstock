@@ -1,5 +1,5 @@
 {% set name = "secml" %}
-{% set version = "0.14.1" %}
+{% set version = "0.15.6" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/secml-{{ version }}.zip
-  sha256: 5aafb1ef5fa80ecb60d72f588e582442d59aa966cc22b98f1c092d04297898fd
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/secml-{{ version }}.tar.gz
+  sha256: 6bfe0765a543f30e9c2c6c3b393e687908a364b3049fc91d8aae26d6bc66e335
 
 build:
   number: 0
