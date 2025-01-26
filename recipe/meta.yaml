@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/secml-{{ version }}.zip
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/secml-{{ version }}.zip
   sha256: 5aafb1ef5fa80ecb60d72f588e582442d59aa966cc22b98f1c092d04297898fd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.5,<3.9
+    - python {{ python_min }}
   run:
     - joblib >=0.14
     - matplotlib-base >=3
     - numpy >=1.17
     - pillow >=6.2.1
-    - python >=3.5,<3.9
+    - python >={{ python_min }},<3.9
     - python-dateutil
     - requests
     - scikit-learn >=0.22
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://secml.gitlab.io
